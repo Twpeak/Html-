@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>校园生活页面</title>
+    <link href="../css/TF.css" rel="stylesheet" type="text/css">
+</head>
+<script type="text/javascript">
+    function allowDrop(ev)
+    {
+        ev.preventDefault();
+    }
+
+    function drag(ev)
+    {
+        ev.dataTransfer.setData("Text",ev.target.id);
+    }
+
+    function drop(ev)
+    {
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+<body>
+    <main>
+        <div class="top">
+            <div class="item">
+                <div class="container"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <p>图书馆</p>
+            </div>
+            <div class="item">
+                <div class="container"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <p>操场</p>
+            </div>
+            <div class="item">
+                <div class="container"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <p>寝室楼</p>
+            </div>
+        </div>
+
+        <div class="img">
+            <div class="img_item">
+                <img draggable="true" ondragstart="drag(event)" id="drag1" src="../images/library.jpg">
+            </div>
+            <div class="img_item">
+                <img  draggable="true" ondragstart="drag(event)" id="drag2" src="../images/playground.jpg">
+            </div>
+            <div class="img_item">
+                <img draggable="true" ondragstart="drag(event)" id="drag3" src="../images/dorm.jpg">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

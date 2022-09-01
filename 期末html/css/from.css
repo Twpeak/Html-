@@ -1,0 +1,41 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html{
+    background-image: url("../images/from.jpg") ;
+    background-repeat:  no-repeat;
+    background-size: cover;
+}
+/*form{*/
+/*    width: 600px;*/
+/*    margin: 20px auto;*/
+/*}*/
+fieldset{
+    width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+}
+form>fieldset>input,meter{
+    width: 100%;
+    /*一般来说行高与元素高相同可以使元素垂直居中*/
+    height: 40px;
+    line-height: 40px;
+    margin: 10px  0 ;
+    border: 1px solid ;
+    border-radius: 4px;
+    font-size: 16px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    /*    box-sizing: border-box;属性使得height和width由原本的只计算内容宽高不包含内边距，边框，外边距
+    变得包含了内边距，边框不包含外边距。（简单的说就是让左右对齐）*/
+}
+meter{
+    padding: 0px;
+    border-radius: 20px;
+}

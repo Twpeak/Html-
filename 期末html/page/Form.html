@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息表单</title>
+    <link href="../css/from.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--fieldset文本域     legend域标签-->
+<!--name的作用是在提交数据时，有name的才能看出提交-->
+<!--label for属性，连接文本框，做到点击标签自动获取焦点-->
+<form>
+    <fieldset>
+        <legend>学生档案</legend>
+        <label for="userName">姓名：</label>
+        <input type="text" id="userName" name="userName" placeholder="请输入用户名" >
+        <label for="userPhone">* 手机号码：</label>
+        <input type="tel" required pattern="^1\d{10}$" placeholder="请输入手机号码" name="userPhone" id="userPhone">
+        <label for="email">* 邮箱地址：</label>
+        <input type="email" id="email" name="email" required>
+        <label for="school">所属学院：</label>
+        <input type="text" name="" placeholder="请选择" id="school" list="datalist">
+        <datalist id="datalist">
+            <option value="java学院" label="浩瀚如海">
+            <option value="html5+css3学院" label="前端技术">
+            <option value="python学院" label="新兴之秀">
+            <option value="c++学院" label="计算机原理">
+        </datalist>
+        <label for="grade">入学成绩：</label>
+        <input type="number" id="grade" name="grade" min="0" max="100" value="0">
+        <label for="level">基础水平</label>
+        <meter max="100" min="0" high="80" low="60" optimum="100" id="level"></meter>
+        <label for="in">入学时期</label>
+        <input type="date" name="inschool" id="in">
+        <label for="out">毕业时期</label>
+        <input type="date" name="outschool" id="out">
+    </fieldset>
+</form>
+<script>
+    document.getElementById("grade").oninput=function () {
+        document.getElementById("level").value=this.value;
+    }
+</script>
+</body>
+</html>
